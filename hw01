@@ -1,0 +1,89 @@
+<html>
+<head>
+<style type="text/css">
+#timetable
+  {
+  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+  width:100%;
+  height: 50%；
+  margin:auto;
+  border-collapse:collapse;
+  }
+
+#timetable td, #timetable th 
+  {
+  font: size 5em;
+  border:2px solid rgb(30, 115, 226);
+  padding:10px 10px 5px 5px;
+  }
+
+#timetable th 
+  {
+  font-size:2em;
+  text-align:center;
+  vertical-align:center;
+  padding-top:10px;
+  padding-bottom:1px;
+  background-color:rgb(30, 115, 226);
+  color:#ffffff;
+  }
+
+#timetable tr.alt td 
+  {
+  color:#000000;
+  background-color:rgb(250, 250, 250);
+  }
+</style>
+</head>
+
+
+
+
+<body>
+<table id="timetable">
+<tr>
+<th>Monday</th>
+<th>Tuesday</th>
+<th>Wednesday</th>
+<th>Thursday</th>
+<th>Friday</th>
+</tr>
+
+<tr>
+<td>web应用开发技术（西区第一公共教学楼C411）</td>
+<td>大学英语四级A（西区第一公共教学楼C219）</td>
+<td>管理信息系统（单周上，西区第一公共教学楼C105）</td>
+<td>数据库原理及应用（西区第一公共教学楼B405）</td>
+<td>大学英语四级A（双周西区第一公共教学楼C219，单周西区外语学院楼219）</td>
+</tr>
+
+<tr class="alt">
+<td>毛泽东思想与中国特色社会主义理论体系（西区第一公共教学楼A120）</td>
+<td>管理科学基础（西区第一公共教学楼C411）</td>
+<td>毛泽东思想与中国特色社会主义理论体系（西区第一公共教学楼A120）</td>
+<td>管理科学基础（西区第一公共教学楼C411）</td>
+<td>运营管理（西区第一公共教学楼B405）</td>
+</tr>
+
+<tr>
+<td>管理信息系统（西区第一公共教学楼C105）</td>
+<td>形势与政策（5-7周上，西区第一公共教学楼C123）</td>
+<td>会计学（单周上，西区第一公共教学楼B101）</td>
+<td>体育（体育馆）</td>
+<td>毛泽东思想与中国特色社会主义理论体系（西区第一公共教学楼A120）</td>
+</tr>
+
+<tr class="alt">
+<td>电子商务（西区第一公共教学楼B303）</td>
+<td>数据库原理及应用（西区第一公共教学楼C109）</td>
+<td></td>
+<td>会计学（西区第一公共教学楼B101）</td>
+<td></td>
+</tr>
+
+
+
+
+</table>
+</body>
+</html>

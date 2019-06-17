@@ -1,0 +1,115 @@
+
+<html>
+<head>
+  <style>
+  td {
+    height: 7em;
+    width: 10em;
+    text-align: center;
+    box-shadow: 3px 3px 5px 5px #817f7e;
+  }
+
+  td:hover {
+    position: relative;
+    top:2px;
+    left: 2px;
+
+  }
+
+  .cell {
+    height: 4em;
+    width: 10em;
+  }
+
+  .cell > .detail {
+    display: none;
+  }
+
+  .cell > .detail.open {
+    display: block;
+    position: absolute;
+    height: 6em;
+    width: 10em;
+    background-color: rgb(13, 132, 187);
+  }
+
+  td.main-diag {
+    font-weight: bold;
+  }
+
+  td.back-diag {
+    font-style: italic;
+  }
+
+  </style>
+</head>
+<body>
+  <table id="grid">
+
+  </table>
+
+  <script>
+    var time= new Array(" ","Monday","Tuesday","Wednesday","Thursday","Friday","第一节","web应用开发技术","大学英语四级A","管理信息系统","数据库原理及应用","大学英语四级A","第二节","毛泽东思想与中国特色社会主义理论体系","管理科学基础","毛泽东思想与中国特色社会主义理论体系","管理科学基础","运营管理","第三节","管理信息系统","形势与政策","会计学","体育","毛泽东思想与中国特色社会主义理论体系","第四节","电子商务","数据库原理及应用"," ","会计学"," ")
+
+    var time2= new Array(" "," "," "," "," "," ","8:20-10:00", "西区第一公共教学楼C411 老师：吕成功","西区第一公共教学楼C221 老师：张蔚","单周上，西区第一公共教学楼C105 老师：刘烨","西区第一公共教学楼B405 老师：吴君","双周西区第一公共教学楼C219，单周西区外语学院楼219 老师：张蔚","10:20-12:00","西区第一公共教学楼A120 老师：顾洪英","西区第一公共教学楼C411 老师：赵方方","西区第一公共教学楼A120 老师：顾洪英","西区第一公共教学楼C411 老师：赵方方","西区第一公共教学楼B405 老师：刘亮","14:00-15:40","西区第一公共教学楼C105 老师：刘烨","5-7周上，西区第一公共教学楼C123 老师：邵夏，李坤","单周上，西区第一公共教学楼B101 老师：姜红","体育馆","西区第一公共教学楼A120 老师：顾洪英","16:00-17：40","西区第一公共教学楼B303 老师：张亮","西区第一公共教学楼C109 老师：吴君"," ","西区第一公共教学楼B101 老师：姜红"," ")
+    
+
+    
+
+    let tblEl = document.getElementById('grid');
+    for (let i = 0; i < 5; i++) {
+      let trEl = document.createElement('tr');
+      for (let j = 0; j < 6; j++) {
+        let tdEl = document.createElement('td');
+        let divEl = document.createElement('div')
+        divEl.className = 'cell';
+
+        
+        let detailDivEl = document.createElement('div');
+        detailDivEl.className = "detail";
+    
+        detailDivEl.innerHTML = time2[6*i+j];
+        detailDivEl.onmouseout =function(event) {
+          let names = detailDivEl.className.split(' ');
+          names = names.filter((x) => x != 'open')
+          detailDivEl.className = names.join(' ');
+        }
+        divEl.append(detailDivEl);
+
+        let briefDivEl = document.createElement('div');
+        briefDivEl.innerHTML = time[6*i+j];
+        divEl.append(briefDivEl);
+
+
+
+        tdEl.onclick = function(event) {
+          let names = detailDivEl.className.split(' ');
+
+          if (names.indexOf('open') >= 0) {
+            names = names.filter((x) => x != 'open')
+          } else {
+            names.push('open');
+          }
+
+          console.log(names);
+
+          detailDivEl.className = names.join(' ');
+
+
+        };
+
+
+        let classNames = [];
+        
+        tdEl.className = classNames.join(' ');
+
+        tdEl.append(divEl);
+        trEl.append(tdEl);
+      }
+      tblEl.append(trEl);
+    }
+
+  </script>
+</body>
+
+</html>
